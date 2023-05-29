@@ -16,9 +16,7 @@ bot.hears(/\/update/, (ctx) => {
     lastcommand = "mark";
   });
   bot.hears(/\/display/, (ctx) => {
-    // const beautifiedJson = JSON.stringify(curr, null, 2); 
-    lastcommand = "display";// Adds 2 spaces for indentation
-// ctx.reply(beautifiedJson);
+    lastcommand = "display";
   
     ctx.reply(JSON.stringify(curr));
   });
@@ -64,20 +62,6 @@ bot.use((ctx) => {
     
   });
 
-// bot.mark((ctx)=>{
-//     lastcommand  = "mark";
-//     ctx.reply("successfully update the last command");
-// })
-// bot.use((ctx)=>{
-//     const message = ctx.message;
-//     if(isObject(str))
-//     {
-
-//     }
-//     else{
-
-//     }
-// })
 function commachecker(str)
 {
     const values = str.split(',');
@@ -98,7 +82,6 @@ function commachecker(str)
       const key = values[i].trim();
       obj[key] = {'current':0,'your':0};
     }
-    // const objString = JSON.stringify(obj);
   
     return obj;
   }
